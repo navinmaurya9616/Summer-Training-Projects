@@ -7,12 +7,6 @@ Library Management System
 #include<process.h>
 #include<string.h>
 #include<iomanip.h>
-
-//***************************************************************
-//                   CLASS USED IN PROJECT
-//****************************************************************
-
-
 class book
 {
 	char bno[6];
@@ -129,24 +123,10 @@ public:
     void report()
     {cout<<"\t"<<admno<<setw(20)<<name<<setw(10)<<token<<endl;}
 
-};         //class ends here
-
-
-
-
-//***************************************************************
-//        global declaration for stream object, object
-//****************************************************************
-
+};        
 fstream fp,fp1;
 book bk;
 student st;
-
-
-//***************************************************************
-//        function to write in file
-//****************************************************************
-
 void write_book()
 {
     char ch;
@@ -175,13 +155,6 @@ void write_student()
     }while(ch=='y'||ch=='Y');
     fp.close();
 }
-
-
-//***************************************************************
-//        function to read specific record from file
-//****************************************************************
-
-
 void display_spb(char n[])
 {
     cout<<"\nBOOK DETAILS\n";
@@ -221,13 +194,6 @@ void display_sps(char n[])
             cout<<"\n\nStudent does not exist";
      getch();
 }
-
-
-//***************************************************************
-//        function to modify record of file
-//****************************************************************
-
-
 void modify_book()
 {
     char n[6];
@@ -288,12 +254,6 @@ void modify_student()
         cout<<"\n\n Record Not Found ";
     getch();
 }
-
-//***************************************************************
-//        function to delete record of file
-//****************************************************************
-
-
 void delete_student()
 {
     char n[6];
@@ -351,14 +311,6 @@ void delete_book()
         rename("Temp.dat","book.dat");
         cout<<"\n\n\tRecord Deleted ..";
         getch();
-}
-
-
-
-//***************************************************************
-//        function to display all students list
-//****************************************************************
-
 void display_alls()
 {
     clrscr();
@@ -379,16 +331,6 @@ void display_alls()
     {
         st.report();
     }
-         
-    fp.close();
-    getch();
-}
-
-
-//***************************************************************
-//        function to display Books list
-//****************************************************************
-
 void display_allb()
 {
     clrscr();
@@ -412,13 +354,6 @@ void display_allb()
          fp.close();
          getch();
 }
-
-
-
-//***************************************************************
-//        function to issue book
-//****************************************************************
-
 void book_issue()
 {
     char sn[6],bn[6];
@@ -468,11 +403,6 @@ void book_issue()
       fp.close();
       fp1.close();
 }
-
-//***************************************************************
-//        function to deposit book
-//****************************************************************
-
 void book_deposit()
 {
     char sn[6],bn[6];
@@ -523,14 +453,6 @@ void book_deposit()
   fp.close();
   fp1.close();
   }
-
-
-
-
-//***************************************************************
-//        INTRODUCTION FUNCTION
-//****************************************************************
-
 void intro()
 {
     clrscr();
@@ -544,13 +466,6 @@ void intro()
     cout<<"\n\nSCHOOL : SCHOOL NAME";
     getch();
 }
-
-
-
-//***************************************************************
-//        ADMINISTRATOR MENU FUNCTION
-//****************************************************************
-
 void admin_menu()
 {
     clrscr();
@@ -601,13 +516,6 @@ void admin_menu()
        }
        admin_menu();
 }
-
-
-//***************************************************************
-//        THE MAIN FUNCTION OF PROGRAM
-//****************************************************************
-
-
 void main()
 {
     char ch;
